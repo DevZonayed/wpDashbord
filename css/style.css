@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+*,
+::before,
+::after{
+    box-sizing: border-box;
+}
+
+:root{
+    --shadow-1:0 .125rem .25rem rgba(255,255,255, .075);
+    --shadow-2:0 .5rem 1rem rgba(255,255,255, .15);
+    --shadow-3:0 1rem 3rem rgba(255,255,255, .50);
+}
+
+li {
+    list-style: none;
+}
+a, a:hover{
+    text-decoration: none;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+.dash-top-menu{
+    background-color: #1d2327;
+    padding: 0 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.dash-top-menu ul.top-menu{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+.dash-top-menu ul.top-menu .admin-menu{
+    position: absolute;
+    top: 0px;
+    right: 20px;
+}
+.dash-top-menu ul.top-menu li {
+    padding: 10px 10px;
+    display: block;
+    transition: .3s;
+}
+.dash-top-menu ul.top-menu li a{
+    color: #fff;
+    display: block;
+    transition: .3s;
+}
+.dash-top-menu ul.top-menu li:hover{
+    background-color:#2c3338;
+}
+.dash-top-menu ul.top-menu li a:hover{
+   color: #2271b1;
+}
+.dashboard-body{
+    margin-top: 40px;
+    z-index: -1;
+
+}
+.dash-board-details{
+    width: 88%;
+    overflow: hidden;
+    float: right;
+    display: block;
+    padding: 0 30PX;
+    
+}
+.dash-left-menu{
+    height:100%;
+    background-color: #1d2327;
+    width: 12%;
+    float: left;
+    overflow: hidden;
+    padding-top: 10px;
+    position: -webkit-sticky;
+	position: sticky;
+	top: 0px;
+	display: block !important;
+}
+.dash-left-menu .dash-menu ul{
+    padding-left: 0;
+}
+.dash-left-menu .dash-menu ul li a{
+    padding: 7px 10px;
+    color: #fff;
+    font-size: 14px;
+    display: block;
+    position: relative;
+}
+.dash-left-menu .dash-menu ul li a::before{
+    content: '';
+    width: 5px;
+    height: 100%;
+    background: #2271b1;
+    left: 0;
+    top: 0;
+    position: absolute;
+    opacity: 0;
+    transition: .3s;
+}
+.dash-left-menu .dash-menu ul li a:hover::before{
+    opacity: 1;
+}
+.dash-left-menu .dash-menu ul li a.active::before{
+    background: #fff;
+}
+.dash-left-menu .dash-menu ul li a.active{
+    position: relative;
+    background-color: #2271b1;
+    color: #fff;
+}
+.dash-left-menu .dash-menu ul li .dash-sub-menu{
+    background-color: #2c3338;
+    color: #fff;
+}
+.dash-left-menu .dash-menu ul li a.active::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    border-right: 10px solid #fff;
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid transparent;
+}
+
+.dash-left-menu .dash-menu ul li a i {
+    width: 20px;
+}
+.fa-play-circle{
+    transform: rotate(60deg);
+}
+.dash-left-menu .dash-menu ul.dash-sub-menu{
+padding-left:0 ;
+}
+
+
+/* Dashboard Body */
+
+.dashboard-details {
+    padding: 0 30px;
+}
+.dash-board-details .dashboard-heading{
+    display: flex;
+    justify-content: space-between;
+}
+.dash-board-details .dashboard-heading .d-title{
+    display: inline-block;
+}
+.dash-board-details .dashboard-heading .dash-board-details-left .d-title{
+    margin-top: 20px;
+}
+.dash-board-details .dashboard-heading .dash-board-details-right ul{
+    display: flex;
+    justify-content: space-between;
+}
+.dash-board-details .dashboard-heading .dash-board-details-right ul li{
+    padding: 5px 5px;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-radius: 7px;
+} 
+.dash-board-details .dashboard-heading .dash-board-details-right ul li a{
+color: #1d2327;
+font-size: 14px;
+padding:0 10px;
+
+}
+.dash-board-details .dashboard-heading .dash-board-details-right ul li:first-child{
+    margin-right: 5px;
+}
+.dashboard-body-right{
+    margin-top: 20px;
+}
+.dash-board-details .dashboard-body-right .plugin-alert{
+    border-top: 1px solid #c3c4c7;
+    border-right: 1px solid #c3c4c7;
+    border-bottom: 1px solid #c3c4c7;
+    border-left: 5px solid #dba617;
+    padding: 12px 10px;
+    position: relative;
+}
+.dash-board-details .dashboard-body-right .plugin-alert .dismis-btn{
+    position:absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: #1d2327;
+    color: #fff;
+    line-height: 15px;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    text-align: center;
+}
+.dash-board-details .dashboard-body-right .plugin-alert p{
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+.dash-board-details .dashboard-body-right .plugin-alert p:last-child{
+    margin-bottom: 0px;
+}
+
+.dash-board-details .dashboard-body-right .plugin-alert.elementor{
+    border-left: 5px solid #93003c;
+    display: flex;
+    /* justify-content: space-between; */
+}
+.dash-board-details .dashboard-body-right .plugin-alert.elementor .el-icon{
+    width: 70px;
+    font-size: 30px;
+    color: #93003c;
+    margin-top: -7px;
+}
+.dash-board-details .dashboard-body-right .plugin-alert.elementor .el-content{
+    margin-top: 7px;
+}
+.dash-board-details .dashboard-body-right .plugin-alert.elementor .el-content h5{
+    font-size: 18px;
+}
+.dash-board-details .dashboard-body-right .plugin-alert.elementor .el-content p{
+    font-size: 13px;
+}
+.dash-board-details .dashboard-body-right .plugin-alert.elementor .btn-danger{
+    background-color: #93003c;
+    border: none;
+    margin-right: 10px;
+}
+.dash-board-details .dashboard-body-right .plugin-alert.elementor .btn-outline-danger{
+    border-color: #93003c;
+}
+.dash-board-details .dashboard-body-right .plugin-alert.elementor .btn-outline-danger:hover{
+    background: transparent;
+    color: #690e33;
+}
+
+.arif-tab .tab-title{
+    border:1px solid #ddd;
+    padding: 10px 10px;
+    position: relative;
+}
+.arif-tab .tab-title p {
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+.arif-tab .tab-title span.tab-btn{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.arif-tab .tab-body{
+    border-left:1px solid #ddd;
+    border-right:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    padding: 10px 10px;
+    display: none;
+}
+.arif-tab .tab-body.active{
+    display: block;
+}
+.arif-tab .tab-body p{
+    font-size: 14px;
+}
+.dash-board-details{
+    display: none;
+}
+.dash-board-details.active{
+    display: block;
+}
